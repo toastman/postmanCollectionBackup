@@ -1,0 +1,179 @@
+{
+  "info": {
+    "name": "Mockapitron",
+    "_postman_id": "e853e683-4c93-92c4-bf7e-b58347dd1bef",
+    "description": "Test",
+    "schema": "https://schema.getpostman.com/json/collection/v2.0.0/collection.json"
+  },
+  "item": [
+    {
+      "_postman_id": "40784492-6ee0-c5b7-efe7-b6e2a23e989e",
+      "name": "condition1",
+      "description": "",
+      "item": [
+        {
+          "_postman_id": "6b5fe8d1-a0b2-2ffe-560d-d82aedc0ca4e",
+          "name": "With email",
+          "event": [
+            {
+              "listen": "test",
+              "script": {
+                "type": "text/javascript",
+                "exec": [
+                  "console.log(\"With email request =====\")",
+                  "var i = _.parseInt(environment.iteration);",
+                  "",
+                  "if (responseCode.code === 200) {",
+                  "  if (i < 4) {",
+                  "    // environment.iteration = ++i",
+                  "    console.log(\"Repeat With emeil req ======\", environment.iteration)",
+                  "    postman.setNextRequest(\"GettingName\");",
+                  "  } else {",
+                  "    console.log(\"Go next ====\");",
+                  "    postman.clearEnvironmentVariable(\"iteration\");",
+                  "    postman.setNextRequest(null);",
+                  "  }",
+                  "}"
+                ]
+              }
+            },
+            {
+              "listen": "prerequest",
+              "script": {
+                "type": "text/javascript",
+                "exec": [
+                  "var i = environment.iteration ? _.parseInt(environment.iteration) : 0;",
+                  "environment.iteration = ++i"
+                ]
+              }
+            }
+          ],
+          "request": {
+            "url": "{{baseUrl}}?size={{number}}&name=name&email=email",
+            "method": "GET",
+            "body": {
+              "mode": "formdata"
+            },
+            "description": ""
+          }
+        }
+      ]
+    },
+    {
+      "_postman_id": "5ef8bad5-2fa8-74ae-b0f5-cd16a4ce7352",
+      "name": "condition2",
+      "description": "",
+      "item": [
+        {
+          "_postman_id": "18891726-f77c-7523-b074-1bf255f537b5",
+          "name": "Post schema",
+          "event": [
+            {
+              "listen": "test",
+              "script": {
+                "type": "text/javascript",
+                "exec": [
+                  "console.log('Post schema =====')"
+                ]
+              }
+            },
+            {
+              "listen": "prerequest",
+              "script": {
+                "type": "text/javascript",
+                "exec": [
+                  "function generateNumber(){",
+                  "    return 3;",
+                  "}",
+                  "",
+                  "// postman.setEnvironmentVariable(\"newEmail\", email);",
+                  "postman.setEnvironmentVariable(\"number\", generateNumber() );"
+                ]
+              }
+            }
+          ],
+          "request": {
+            "url": "{{baseUrl}}",
+            "method": "POST",
+            "header": [
+              {
+                "key": "Accept",
+                "value": "application/json",
+                "description": ""
+              },
+              {
+                "key": "Content-Type",
+                "value": "application/json",
+                "description": ""
+              }
+            ],
+            "body": {
+              "mode": "raw",
+              "raw": "{\n\t\"schema\":{\n\t\t\"name\":\"name\",\n\t\t\"address\":\"address\"\n\t},\n\t\"size\": {{number}}\n}"
+            },
+            "description": ""
+          }
+        }
+      ]
+    },
+    {
+      "_postman_id": "37dd96fe-e686-9ba6-ace5-6e91bd27c252",
+      "name": "Getting name",
+      "event": [
+        {
+          "listen": "test",
+          "script": {
+            "type": "text/javascript",
+            "exec": [
+              "tests[\"Status code is 200\"] = responseCode.code === 200;",
+              "tests[\"Checkong lodash\"] = _.difference([1, 2, 3], [4, 2]).join(\"\") === \"13\";",
+              "// tests[\"Response time is less than 500ms\"] = responseTime < 500;",
+              "",
+              "if (responseCode.code === 200) {",
+              "  console.log(\"Getting name request === \")",
+              "//   var jsonData = JSON.parse(responseBody),",
+              "//     objectsNumber = postman.getEnvironmentVariable(\"number\"),",
+              "//     schema;",
+              "",
+              "//   if (objectsNumber == 1) {",
+              "//     schema = {",
+              "//       \"type\": \"object\",",
+              "//       \"properties\": {",
+              "//         \"name\": {",
+              "//           \"type\": \"string\"",
+              "//         }",
+              "//       }",
+              "//     }",
+              "//   } else {",
+              "//     schema = {",
+              "//       \"type\": \"array\",",
+              "//       \"items\": {",
+              "//         \"type\": \"object\",",
+              "//         \"properties\": {",
+              "//           \"name\": {",
+              "//             \"type\": \"string\"",
+              "//           }",
+              "//         }",
+              "//       }",
+              "//     }",
+              "//   }",
+              "",
+              "//   tests[\"Valid Data1\"] = tv4.validate(jsonData, schema);",
+              "//   console.log(\"Validation failed: \", tv4.error);",
+              "",
+              "}"
+            ]
+          }
+        }
+      ],
+      "request": {
+        "url": "{{baseUrl}}?size={{number}}&name=name",
+        "method": "GET",
+        "body": {
+          "mode": "formdata"
+        },
+        "description": ""
+      }
+    }
+  ]
+}
