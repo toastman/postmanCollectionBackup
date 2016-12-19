@@ -184,25 +184,8 @@
             "type": "text/javascript",
             "exec": [
               "tests[\"Status code is 200\"] = responseCode.code === 200;",
-              "tests[\"Checkong lodash\"] = _.difference([1, 2, 3], [4, 2]).join(\"\") === \"13\";",
-              "// tests[\"Response time is less than 500ms\"] = responseTime < 500;",
               "",
-              "if (responseCode.code === 200) {",
-              "  console.log(\"Getting name request === \")",
-              "  var jsonData = JSON.parse(responseBody),",
-              "    objectsNumber = postman.getEnvironmentVariable(\"number\"),",
-              "    schema;",
-              "",
-              "  if (objectsNumber == 1) {",
-              "    schema = {",
-              "      \"type\": \"object\",",
-              "      \"properties\": {",
-              "        \"name\": {",
-              "          \"type\": \"string\"",
-              "        }",
-              "      }",
-              "    }",
-              "  } else {",
+              "var jsonData = JSON.parse(responseBody),",
               "    schema = {",
               "      \"type\": \"array\",",
               "      \"items\": {",
@@ -214,11 +197,9 @@
               "        }",
               "      }",
               "    }",
-              "  }",
               "",
-              "  tests[\"Valid Data1\"] = tv4.validate(jsonData, schema);",
-              "  console.log(\"Validation failed: \", tv4.error);",
-              "}"
+              " tests[\"Valid Data1\"] = tv4.validate(jsonData, schema);",
+              " console.log(\"Validation failed: \", tv4.error);"
             ]
           }
         }
