@@ -173,6 +173,64 @@
         },
         "description": ""
       }
+    },
+    {
+      "_postman_id": "762692f5-4f5f-6e45-b5c3-9a98b4656b64",
+      "name": "Getting name simple",
+      "event": [
+        {
+          "listen": "test",
+          "script": {
+            "type": "text/javascript",
+            "exec": [
+              "tests[\"Status code is 200\"] = responseCode.code === 200;",
+              "tests[\"Checkong lodash\"] = _.difference([1, 2, 3], [4, 2]).join(\"\") === \"13\";",
+              "// tests[\"Response time is less than 500ms\"] = responseTime < 500;",
+              "",
+              "if (responseCode.code === 200) {",
+              "  console.log(\"Getting name request === \")",
+              "  var jsonData = JSON.parse(responseBody),",
+              "    objectsNumber = postman.getEnvironmentVariable(\"number\"),",
+              "    schema;",
+              "",
+              "  if (objectsNumber == 1) {",
+              "    schema = {",
+              "      \"type\": \"object\",",
+              "      \"properties\": {",
+              "        \"name\": {",
+              "          \"type\": \"string\"",
+              "        }",
+              "      }",
+              "    }",
+              "  } else {",
+              "    schema = {",
+              "      \"type\": \"array\",",
+              "      \"items\": {",
+              "        \"type\": \"object\",",
+              "        \"properties\": {",
+              "          \"name\": {",
+              "            \"type\": \"string\"",
+              "          }",
+              "        }",
+              "      }",
+              "    }",
+              "  }",
+              "",
+              "  tests[\"Valid Data1\"] = tv4.validate(jsonData, schema);",
+              "  console.log(\"Validation failed: \", tv4.error);",
+              "}"
+            ]
+          }
+        }
+      ],
+      "request": {
+        "url": " http://api-mockapitron.rhcloud.com?size=3&name=name&email=email",
+        "method": "GET",
+        "body": {
+          "mode": "formdata"
+        },
+        "description": ""
+      }
     }
   ]
 }
