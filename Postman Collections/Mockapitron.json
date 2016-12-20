@@ -184,7 +184,7 @@
             "type": "text/javascript",
             "exec": [
               "",
-              "tests[\"Response time is less than 500ms\"] = responseTime < 500;",
+              "tests[\"Response time is less than 100ms\"] = responseTime < 100;",
               "",
               "var jsonData = JSON.parse(responseBody),",
               "    schema = {",
