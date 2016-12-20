@@ -183,7 +183,8 @@
           "script": {
             "type": "text/javascript",
             "exec": [
-              "tests[\"Status code is 200\"] = responseCode.code === 200;",
+              "",
+              "tests[\"Response time is less than 500ms\"] = responseTime < 500;",
               "",
               "var jsonData = JSON.parse(responseBody),",
               "    schema = {",
@@ -198,7 +199,7 @@
               "      }",
               "    }",
               "",
-              " tests[\"Valid Data1\"] = tv4.validate(jsonData, schema);"
+              "tests[\"Data format should be valid\"] = tv4.validate(jsonData, schema);"
             ]
           }
         }
