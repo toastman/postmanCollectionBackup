@@ -20,6 +20,8 @@
               "script": {
                 "type": "text/javascript",
                 "exec": [
+                  "tests[\"Status code is 200\"] = responseCode.code === 200;",
+                  "",
                   "console.log(\"With email request =====\")",
                   "var i = _.parseInt(environment.iteration);",
                   "",
@@ -33,7 +35,11 @@
                   "    postman.clearEnvironmentVariable(\"iteration\");",
                   "    postman.setNextRequest(null);",
                   "  }",
-                  "}"
+                  "}",
+                  "",
+                  "",
+                  "",
+                  ""
                 ]
               }
             },
