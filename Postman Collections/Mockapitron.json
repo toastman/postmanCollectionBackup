@@ -9,61 +9,7 @@
     {
       "_postman_id": "40784492-6ee0-c5b7-efe7-b6e2a23e989e",
       "name": "condition1",
-      "description": "",
-      "item": [
-        {
-          "_postman_id": "6b5fe8d1-a0b2-2ffe-560d-d82aedc0ca4e",
-          "name": "With email",
-          "event": [
-            {
-              "listen": "test",
-              "script": {
-                "type": "text/javascript",
-                "exec": [
-                  "tests[\"Status code is 200\"] = responseCode.code === 200;",
-                  "",
-                  "console.log(\"With email request =====\")",
-                  "var i = _.parseInt(environment.iteration);",
-                  "",
-                  "if (responseCode.code === 200) {",
-                  "  if (i < 4) {",
-                  "    // environment.iteration = ++i",
-                  "    console.log(\"Repeat With emeil req ======\", environment.iteration)",
-                  "    postman.setNextRequest(\"GettingName\");",
-                  "  } else {",
-                  "    console.log(\"Go next ====\");",
-                  "    postman.clearEnvironmentVariable(\"iteration\");",
-                  "    postman.setNextRequest(null);",
-                  "  }",
-                  "}",
-                  "",
-                  "",
-                  "",
-                  ""
-                ]
-              }
-            },
-            {
-              "listen": "prerequest",
-              "script": {
-                "type": "text/javascript",
-                "exec": [
-                  "var i = environment.iteration ? _.parseInt(environment.iteration) : 0;",
-                  "environment.iteration = ++i"
-                ]
-              }
-            }
-          ],
-          "request": {
-            "url": "{{baseUrl}}?size={{number}}&name=name&email=email",
-            "method": "GET",
-            "body": {
-              "mode": "formdata"
-            },
-            "description": ""
-          }
-        }
-      ]
+      "description": ""
     },
     {
       "_postman_id": "5ef8bad5-2fa8-74ae-b0f5-cd16a4ce7352",
@@ -212,6 +158,58 @@
       ],
       "request": {
         "url": " http://api-mockapitron.rhcloud.com?size=3&name=name&email=email",
+        "method": "GET",
+        "body": {
+          "mode": "formdata"
+        },
+        "description": ""
+      }
+    },
+    {
+      "_postman_id": "6b5fe8d1-a0b2-2ffe-560d-d82aedc0ca4e",
+      "name": "With email",
+      "event": [
+        {
+          "listen": "test",
+          "script": {
+            "type": "text/javascript",
+            "exec": [
+              "tests[\"Status code is 200\"] = responseCode.code === 200;",
+              "",
+              "console.log(\"With email request =====\")",
+              "var i = _.parseInt(environment.iteration);",
+              "",
+              "if (responseCode.code === 200) {",
+              "  if (i < 4) {",
+              "    // environment.iteration = ++i",
+              "    console.log(\"Repeat With emeil req ======\", environment.iteration)",
+              "    postman.setNextRequest(\"GettingName\");",
+              "  } else {",
+              "    console.log(\"Go next ====\");",
+              "    postman.clearEnvironmentVariable(\"iteration\");",
+              "    postman.setNextRequest(null);",
+              "  }",
+              "}",
+              "",
+              "",
+              "",
+              ""
+            ]
+          }
+        },
+        {
+          "listen": "prerequest",
+          "script": {
+            "type": "text/javascript",
+            "exec": [
+              "var i = environment.iteration ? _.parseInt(environment.iteration) : 0;",
+              "environment.iteration = ++i"
+            ]
+          }
+        }
+      ],
+      "request": {
+        "url": "{{baseUrl}}?size={{number}}&name=name&email=email",
         "method": "GET",
         "body": {
           "mode": "formdata"
