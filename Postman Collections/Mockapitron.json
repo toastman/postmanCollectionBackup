@@ -44,7 +44,7 @@
         "body": {
           "mode": "formdata"
         },
-        "description": ""
+        "description": "Here you can write your API description with usual text and HTML.\n\n<ul>\n  <li>1</li>\n  <li>2</li>\n</ul>"
       }
     },
     {
