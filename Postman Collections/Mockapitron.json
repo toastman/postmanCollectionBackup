@@ -74,9 +74,7 @@
           "script": {
             "type": "text/javascript",
             "exec": [
-              "var i = environment.iteration ? _.parseInt(environment.iteration) : 0;",
-              "environment.iteration = i++;",
-              ""
+              "environment.iteration += 1"
             ]
           }
         }
