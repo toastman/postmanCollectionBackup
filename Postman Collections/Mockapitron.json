@@ -36,7 +36,7 @@
         "body": {
           "mode": "formdata"
         },
-        "description": "Here you can write your API description with usual text and HTML.\n\n<ul>\n  <li>Postman is cool</li>\n  <li>With lot of functionality</li>\n</ul>\n\n<img src=\"http://blog.getpostman.com/wp-content/uploads/2016/03/Run-hero-820px.jpg\"/>"
+        "description": "Here you can write your API description with usual text and HTML.\n\n<ul>\n  <li>Postman is cool</li>\n  <li>With lot of functionality</li>\n  <li><pre>var a = JSON.parse(someData)</pre></li>\n</ul>\n\n<img src=\"http://blog.getpostman.com/wp-content/uploads/2016/03/Run-hero-820px.jpg\"/>"
       }
     },
     {
