@@ -8,7 +8,7 @@
   "item": [
     {
       "_postman_id": "3fc56ebe-bc54-cd6d-2cc7-9a0021427d2d",
-      "name": "WithEmail copy",
+      "name": "First request",
       "event": [
         {
           "listen": "test",
