@@ -19,20 +19,14 @@
               "var i = _.parseInt(environment.iteration);",
               "console.log(\"With email request start =====\", i)",
               "",
-              "if (responseCode.code === 200) {",
-              "  if (i < 4) {",
-              "    console.log(\"Repeat With emeil req ======\", environment.iteration)",
-              "    postman.setNextRequest(\"GettingName\");",
-              "  } else {",
-              "    console.log(\"Go next ====\");",
-              "    postman.clearEnvironmentVariable(\"iteration\");",
-              "    postman.setNextRequest(null);",
-              "  }",
-              "}",
-              "",
-              "",
-              "",
-              ""
+              "if (i < 4) {",
+              "  console.log(\"Repeat With emeil req ======\", environment.iteration)",
+              "  postman.setNextRequest(\"GettingName\");",
+              "} else {",
+              "  console.log(\"Go next ====\");",
+              "  postman.clearEnvironmentVariable(\"iteration\");",
+              "  postman.setNextRequest(null);",
+              "}"
             ]
           }
         },
