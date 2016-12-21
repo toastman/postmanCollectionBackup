@@ -104,6 +104,7 @@
               "tests[\"Valid Data1\"] = tv4.validate(jsonData, schema);",
               "",
               "if (i < 4) {",
+              "    console.log(\"setNextRequest With enail\")",
               "    postman.setNextRequest(\"With enail\");",
               "}"
             ]
