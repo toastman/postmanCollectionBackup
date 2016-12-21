@@ -34,7 +34,7 @@
             "type": "text/javascript",
             "exec": [
               "var i = environment.iteration ? _.parseInt(environment.iteration) : 0;",
-              "environment.iteration = ++i;",
+              "environment.iteration = i++;",
               ""
             ]
           }
@@ -61,7 +61,6 @@
               "tests[\"Status code is 200\"] = responseCode.code === 200;",
               "tests[\"Checkong lodash\"] = _.difference([1, 2, 3], [4, 2]).join(\"\") === \"13\";",
               "",
-              "console.log(\"Getting name request === \")",
               "var jsonData = JSON.parse(responseBody),",
               "  objectsNumber = postman.getEnvironmentVariable(\"number\"),",
               "  i = _.parseInt(environment.iteration),",
