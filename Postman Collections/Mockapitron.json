@@ -36,7 +36,6 @@
             "exec": [
               "var i = environment.iteration ? _.parseInt(environment.iteration) : 0;",
               "environment.iteration = ++i;",
-              "console.log(\"pre script with mail: \", environment.iteration)",
               ""
             ]
           }
