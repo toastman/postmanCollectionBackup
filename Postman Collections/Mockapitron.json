@@ -7,11 +7,6 @@
   },
   "item": [
     {
-      "_postman_id": "40784492-6ee0-c5b7-efe7-b6e2a23e989e",
-      "name": "condition1",
-      "description": ""
-    },
-    {
       "_postman_id": "37dd96fe-e686-9ba6-ace5-6e91bd27c252",
       "name": "Getting name",
       "event": [
