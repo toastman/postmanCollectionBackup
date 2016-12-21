@@ -163,7 +163,7 @@
         ],
         "body": {
           "mode": "raw",
-          "raw": "{\n\t\"schema\":{\n\t\t\"name\":\"name\",\n\t\t\"address\":\"address\"\n\t},\n\t\"size\": {{number}}\n}"
+          "raw": "{\n  \"schema\":{\n  \t\"data\": {\n  \t\t\"name\":\"name\",\n    \t\"address\":\"address\"\t\n  \t}\n  },\n  \"size\": {{number}}\n}"
         },
         "description": ""
       }
