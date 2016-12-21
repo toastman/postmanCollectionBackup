@@ -80,7 +80,7 @@
               "",
               "if (responseCode.code === 200) {",
               "  if (i < 4) {",
-              "    // environment.iteration = ++i",
+              "    environment.iteration = ++i",
               "    console.log(\"Repeat With emeil req ======\", environment.iteration)",
               "    postman.setNextRequest(\"GettingName\");",
               "  } else {",
