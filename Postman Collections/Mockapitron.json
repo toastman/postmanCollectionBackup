@@ -16,9 +16,8 @@
             "type": "text/javascript",
             "exec": [
               "tests[\"Status code is 200\"] = responseCode.code === 200;",
-              "",
-              "console.log(\"With email request start =====\")",
               "var i = _.parseInt(environment.iteration);",
+              "console.log(\"With email request start =====\", i)",
               "",
               "if (responseCode.code === 200) {",
               "  if (i < 4) {",
