@@ -7,6 +7,49 @@
   },
   "item": [
     {
+      "_postman_id": "3fc56ebe-bc54-cd6d-2cc7-9a0021427d2d",
+      "name": "WithEmail copy",
+      "event": [
+        {
+          "listen": "test",
+          "script": {
+            "type": "text/javascript",
+            "exec": [
+              "tests[\"Status code is 200\"] = responseCode.code === 200;",
+              "var i = _.parseInt(environment.iteration);",
+              "",
+              "if (i < 4) {",
+              "  postman.setNextRequest(\"GettingName\");",
+              "} else {",
+              "  console.log(\"Finish ====\");",
+              "  postman.clearEnvironmentVariable(\"iteration\");",
+              "  postman.setNextRequest(null);",
+              "}"
+            ]
+          }
+        },
+        {
+          "listen": "prerequest",
+          "script": {
+            "type": "text/javascript",
+            "exec": [
+              "var i = environment.iteration ? _.parseInt(environment.iteration) : 0;",
+              "environment.iteration = i++;",
+              ""
+            ]
+          }
+        }
+      ],
+      "request": {
+        "url": "{{baseUrl}}?size={{number}}&name=name&email=email",
+        "method": "GET",
+        "body": {
+          "mode": "formdata"
+        },
+        "description": ""
+      }
+    },
+    {
       "_postman_id": "6b5fe8d1-a0b2-2ffe-560d-d82aedc0ca4e",
       "name": "WithEmail",
       "event": [
@@ -153,49 +196,6 @@
         "body": {
           "mode": "raw",
           "raw": "{\n  \"schema\":{\n  \t\"data\": {\n  \t\t\"name\":\"name\",\n    \t\"address\":\"address\"\t\n  \t}\n  },\n  \"size\": {{number}}\n}"
-        },
-        "description": ""
-      }
-    },
-    {
-      "_postman_id": "3fc56ebe-bc54-cd6d-2cc7-9a0021427d2d",
-      "name": "WithEmail copy",
-      "event": [
-        {
-          "listen": "test",
-          "script": {
-            "type": "text/javascript",
-            "exec": [
-              "tests[\"Status code is 200\"] = responseCode.code === 200;",
-              "var i = _.parseInt(environment.iteration);",
-              "",
-              "if (i < 4) {",
-              "  postman.setNextRequest(\"GettingName\");",
-              "} else {",
-              "  console.log(\"Finish ====\");",
-              "  postman.clearEnvironmentVariable(\"iteration\");",
-              "  postman.setNextRequest(null);",
-              "}"
-            ]
-          }
-        },
-        {
-          "listen": "prerequest",
-          "script": {
-            "type": "text/javascript",
-            "exec": [
-              "var i = environment.iteration ? _.parseInt(environment.iteration) : 0;",
-              "environment.iteration = i++;",
-              ""
-            ]
-          }
-        }
-      ],
-      "request": {
-        "url": "{{baseUrl}}?size={{number}}&name=name&email=email",
-        "method": "GET",
-        "body": {
-          "mode": "formdata"
         },
         "description": ""
       }
