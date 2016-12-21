@@ -8,7 +8,7 @@
   "item": [
     {
       "_postman_id": "6b5fe8d1-a0b2-2ffe-560d-d82aedc0ca4e",
-      "name": "With email",
+      "name": "WithEmail",
       "event": [
         {
           "listen": "test",
