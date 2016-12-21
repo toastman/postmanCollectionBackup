@@ -97,7 +97,7 @@
               "",
               "if (i < 4) {",
               "    console.log(\"setNextRequest With enail\")",
-              "    postman.setNextRequest(\"WithEnail\");",
+              "    postman.setNextRequest(\"WithEmail\");",
               "}"
             ]
           }
