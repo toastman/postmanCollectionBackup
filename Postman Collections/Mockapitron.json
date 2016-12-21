@@ -16,15 +16,7 @@
             "type": "text/javascript",
             "exec": [
               "tests[\"Status code is 200\"] = responseCode.code === 200;",
-              "var i = _.parseInt(environment.iteration);",
-              "",
-              "if (i < 4) {",
-              "  postman.setNextRequest(\"GettingName\");",
-              "} else {",
-              "  console.log(\"Finish ====\");",
-              "  postman.clearEnvironmentVariable(\"iteration\");",
-              "  postman.setNextRequest(null);",
-              "}"
+              ""
             ]
           }
         },
