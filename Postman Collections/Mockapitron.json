@@ -14,59 +14,7 @@
     {
       "_postman_id": "5ef8bad5-2fa8-74ae-b0f5-cd16a4ce7352",
       "name": "condition2",
-      "description": "",
-      "item": [
-        {
-          "_postman_id": "18891726-f77c-7523-b074-1bf255f537b5",
-          "name": "Post schema",
-          "event": [
-            {
-              "listen": "test",
-              "script": {
-                "type": "text/javascript",
-                "exec": [
-                  "console.log('Post schema =====')"
-                ]
-              }
-            },
-            {
-              "listen": "prerequest",
-              "script": {
-                "type": "text/javascript",
-                "exec": [
-                  "function generateNumber(){",
-                  "    return 3;",
-                  "}",
-                  "",
-                  "// postman.setEnvironmentVariable(\"newEmail\", email);",
-                  "postman.setEnvironmentVariable(\"number\", generateNumber() );"
-                ]
-              }
-            }
-          ],
-          "request": {
-            "url": "{{baseUrl}}",
-            "method": "POST",
-            "header": [
-              {
-                "key": "Accept",
-                "value": "application/json",
-                "description": ""
-              },
-              {
-                "key": "Content-Type",
-                "value": "application/json",
-                "description": ""
-              }
-            ],
-            "body": {
-              "mode": "raw",
-              "raw": "{\n\t\"schema\":{\n\t\t\"name\":\"name\",\n\t\t\"address\":\"address\"\n\t},\n\t\"size\": {{number}}\n}"
-            },
-            "description": ""
-          }
-        }
-      ]
+      "description": ""
     },
     {
       "_postman_id": "37dd96fe-e686-9ba6-ace5-6e91bd27c252",
@@ -213,6 +161,56 @@
         "method": "GET",
         "body": {
           "mode": "formdata"
+        },
+        "description": ""
+      }
+    },
+    {
+      "_postman_id": "18891726-f77c-7523-b074-1bf255f537b5",
+      "name": "Post schema",
+      "event": [
+        {
+          "listen": "test",
+          "script": {
+            "type": "text/javascript",
+            "exec": [
+              "console.log('Post schema =====')"
+            ]
+          }
+        },
+        {
+          "listen": "prerequest",
+          "script": {
+            "type": "text/javascript",
+            "exec": [
+              "function generateNumber(){",
+              "    return 3;",
+              "}",
+              "",
+              "// postman.setEnvironmentVariable(\"newEmail\", email);",
+              "postman.setEnvironmentVariable(\"number\", generateNumber() );"
+            ]
+          }
+        }
+      ],
+      "request": {
+        "url": "{{baseUrl}}",
+        "method": "POST",
+        "header": [
+          {
+            "key": "Accept",
+            "value": "application/json",
+            "description": ""
+          },
+          {
+            "key": "Content-Type",
+            "value": "application/json",
+            "description": ""
+          }
+        ],
+        "body": {
+          "mode": "raw",
+          "raw": "{\n\t\"schema\":{\n\t\t\"name\":\"name\",\n\t\t\"address\":\"address\"\n\t},\n\t\"size\": {{number}}\n}"
         },
         "description": ""
       }
