@@ -20,7 +20,6 @@
               "console.log(\"With email request start =====\", i)",
               "",
               "if (i < 4) {",
-              "  console.log(\"Repeat With emeil req ======\", environment.iteration)",
               "  postman.setNextRequest(\"GettingName\");",
               "} else {",
               "  console.log(\"Go next ====\");",
