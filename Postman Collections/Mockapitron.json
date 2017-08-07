@@ -1,4 +1,5 @@
 {
+  "variables": [],
   "info": {
     "name": "Mockapitron",
     "_postman_id": "e853e683-4c93-92c4-bf7e-b58347dd1bef",
@@ -33,11 +34,127 @@
       "request": {
         "url": "{{baseUrl}}?size={{number}}&name=name&email=email",
         "method": "GET",
-        "body": {
-          "mode": "formdata"
-        },
+        "header": [],
+        "body": {},
         "description": "Here you can write your API description with usual text and HTML.\n\n<ul>\n  <li>Postman is cool</li>\n  <li>With lot of functionality</li>\n  <li><pre>var a = JSON.parse(someData)</pre></li>\n</ul>\n\n<img src=\"http://blog.getpostman.com/wp-content/uploads/2016/03/Run-hero-820px.jpg\"/>"
-      }
+      },
+      "response": [
+        {
+          "id": "58984da3-beaf-000a-e726-f54218f4c92b",
+          "name": "MockapitronMailAndNameReqMock",
+          "originalRequest": {
+            "url": {
+              "raw": "{{baseUrl}}?size={{number}}&name=name&email=email",
+              "auth": {},
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "path": [
+                ""
+              ],
+              "query": [
+                {
+                  "key": "size",
+                  "value": "{{number}}",
+                  "equals": true,
+                  "description": ""
+                },
+                {
+                  "key": "name",
+                  "value": "name",
+                  "equals": true,
+                  "description": ""
+                },
+                {
+                  "key": "email",
+                  "value": "email",
+                  "equals": true,
+                  "description": ""
+                }
+              ],
+              "variable": []
+            },
+            "method": "GET",
+            "header": [
+              {
+                "key": "x-api-key",
+                "value": "30c4f1fd214b48e5ad00e917e2bb8ec6\n",
+                "description": ""
+              }
+            ],
+            "body": {}
+          },
+          "status": "OK",
+          "code": 200,
+          "_postman_previewlanguage": "json",
+          "_postman_previewtype": "text",
+          "header": [
+            {
+              "key": "Access-Control-Allow-Origin",
+              "value": "*",
+              "name": "Access-Control-Allow-Origin",
+              "description": ""
+            },
+            {
+              "key": "Connection",
+              "value": "Keep-Alive",
+              "name": "Connection",
+              "description": ""
+            },
+            {
+              "key": "Content-Encoding",
+              "value": "gzip",
+              "name": "Content-Encoding",
+              "description": ""
+            },
+            {
+              "key": "Content-Length",
+              "value": "124",
+              "name": "Content-Length",
+              "description": ""
+            },
+            {
+              "key": "Content-Type",
+              "value": "application/json; charset=utf-8",
+              "name": "Content-Type",
+              "description": ""
+            },
+            {
+              "key": "Date",
+              "value": "Mon, 07 Aug 2017 11:35:36 GMT",
+              "name": "Date",
+              "description": ""
+            },
+            {
+              "key": "ETag",
+              "value": "W/\"95-tC5fhVKYqx7WwqIYk8iZOg\"",
+              "name": "ETag",
+              "description": ""
+            },
+            {
+              "key": "Keep-Alive",
+              "value": "timeout=15, max=100",
+              "name": "Keep-Alive",
+              "description": ""
+            },
+            {
+              "key": "Vary",
+              "value": "Accept-Encoding",
+              "name": "Vary",
+              "description": ""
+            },
+            {
+              "key": "X-Powered-By",
+              "value": "Express",
+              "name": "X-Powered-By",
+              "description": ""
+            }
+          ],
+          "cookie": [],
+          "responseTime": "258",
+          "body": "[{\"name\":\"Laura Dennis\",\"email\":\"gambec@pu.net\"},{\"name\":\"Rosetta Mills\",\"email\":\"ta@huzwul.org\"},{\"name\":\"Ralph Estrada\",\"email\":\"tajun@genne.net\"}]"
+        }
+      ]
     },
     {
       "_postman_id": "6b5fe8d1-a0b2-2ffe-560d-d82aedc0ca4e",
@@ -74,11 +191,11 @@
       "request": {
         "url": "{{baseUrl}}?size={{number}}&name=name&email=email",
         "method": "GET",
-        "body": {
-          "mode": "formdata"
-        },
+        "header": [],
+        "body": {},
         "description": ""
-      }
+      },
+      "response": []
     },
     {
       "_postman_id": "37dd96fe-e686-9ba6-ace5-6e91bd27c252",
@@ -132,11 +249,115 @@
       "request": {
         "url": "{{baseUrl}}?size={{number}}&name=name",
         "method": "GET",
-        "body": {
-          "mode": "formdata"
-        },
+        "header": [],
+        "body": {},
         "description": ""
-      }
+      },
+      "response": [
+        {
+          "id": "996874d8-79d8-ea36-8570-c5bc9a1b7b04",
+          "name": "GetName",
+          "originalRequest": {
+            "url": {
+              "raw": "{{baseUrl}}?size={{number}}&name=name",
+              "auth": {},
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "path": [
+                ""
+              ],
+              "query": [
+                {
+                  "key": "size",
+                  "value": "{{number}}",
+                  "equals": true,
+                  "description": ""
+                },
+                {
+                  "key": "name",
+                  "value": "name",
+                  "equals": true,
+                  "description": ""
+                }
+              ],
+              "variable": []
+            },
+            "method": "GET",
+            "header": [],
+            "body": {}
+          },
+          "status": "OK",
+          "code": 200,
+          "_postman_previewlanguage": "json",
+          "_postman_previewtype": "text",
+          "header": [
+            {
+              "key": "Access-Control-Allow-Origin",
+              "value": "*",
+              "name": "Access-Control-Allow-Origin",
+              "description": ""
+            },
+            {
+              "key": "Connection",
+              "value": "Keep-Alive",
+              "name": "Connection",
+              "description": ""
+            },
+            {
+              "key": "Content-Encoding",
+              "value": "gzip",
+              "name": "Content-Encoding",
+              "description": ""
+            },
+            {
+              "key": "Content-Length",
+              "value": "69",
+              "name": "Content-Length",
+              "description": ""
+            },
+            {
+              "key": "Content-Type",
+              "value": "application/json; charset=utf-8",
+              "name": "Content-Type",
+              "description": ""
+            },
+            {
+              "key": "Date",
+              "value": "Mon, 07 Aug 2017 11:52:54 GMT",
+              "name": "Date",
+              "description": ""
+            },
+            {
+              "key": "ETag",
+              "value": "W/\"43-Ks7vSQtvvX+RUx3CHY2jmA\"",
+              "name": "ETag",
+              "description": ""
+            },
+            {
+              "key": "Keep-Alive",
+              "value": "timeout=15, max=100",
+              "name": "Keep-Alive",
+              "description": ""
+            },
+            {
+              "key": "Vary",
+              "value": "Accept-Encoding",
+              "name": "Vary",
+              "description": ""
+            },
+            {
+              "key": "X-Powered-By",
+              "value": "Express",
+              "name": "X-Powered-By",
+              "description": ""
+            }
+          ],
+          "cookie": [],
+          "responseTime": "317",
+          "body": "[{\"name\":\"Todd Tran\"},{\"name\":\"Terry Byrd\"},{\"name\":\"Roxie Kelly\"}]"
+        }
+      ]
     },
     {
       "_postman_id": "18891726-f77c-7523-b074-1bf255f537b5",
@@ -186,7 +407,8 @@
           "raw": "{\n  \"schema\":{\n  \t\"data\": {\n  \t\t\"name\":\"name\",\n    \t\"address\":\"address\"\t\n  \t}\n  },\n  \"size\": {{number}}\n}"
         },
         "description": ""
-      }
+      },
+      "response": []
     }
   ]
 }
